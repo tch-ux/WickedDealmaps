@@ -12,7 +12,7 @@ const POIS = [
   {
     id: 'office-racianska', cat: 'office', catLabel: 'Production Office',
     name: 'Production Office Račianska',
-    addr: 'Račianska 77A, Bratislava',
+    addr: 'Račianska 12481/77A, Bratislava',
     lat: 48.17186, lng: 17.12647
   },
   {
@@ -29,7 +29,8 @@ const POIS = [
     addr: 'Janáčkova 2171/1, 811 08 Staré Mesto, Bratislava',
     lat: 48.14799, lng: 17.11940,
     carContera: '~18 min', carRacianska: '~10 min',
-    logo: 'assets/hotels/ambiente.png'
+    logo: 'assets/hotels/ambiente.png',
+    mapsQuery: 'Smart & Green Living by Ambiente'
   },
   {
     id: 'hotel-sheraton', cat: 'hotel', catLabel: 'Accommodation',
@@ -71,7 +72,8 @@ function kmTo(a, b) {
 }
 
 function gmapsHref(p) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + ', ' + p.addr)}`;
+  const q = p.mapsQuery || (p.name + ', ' + p.addr);
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 }
 function dirHref(p) {
   return `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
