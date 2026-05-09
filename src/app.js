@@ -6,9 +6,11 @@ POIS.forEach(p => {
   card.dataset.id = p.id;
 
   const iconId = p.cat === 'office' ? '#ic-briefcase' : '#ic-bed';
-  const pictHTML = p.logo
-    ? `<img class="poi-logo${p.logoLight ? ' logo-light' : ''}" src="${p.logo}" alt="${p.name} logo" />`
-    : `<svg><use href="${iconId}"></use></svg>`;
+  const pictHTML = p.logoText
+    ? `<span class="logo-text">${p.logoText}</span>`
+    : p.logo
+      ? `<img class="poi-logo${p.logoLight ? ' logo-light' : ''}" src="${p.logo}" alt="${p.name} logo" />`
+      : `<svg><use href="${iconId}"></use></svg>`;
 
   let metaHTML = '';
   if (p.cat === 'hotel') {

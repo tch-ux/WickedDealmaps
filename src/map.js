@@ -11,9 +11,11 @@ map.fitBounds(overviewBounds, { padding: [60, 60] });
 function makeMarkerHTML(p) {
   const fill = p.cat === 'office' ? 'var(--office)' : 'var(--hotel)';
   const iconId = p.cat === 'office' ? '#ic-briefcase' : '#ic-bed';
-  const glyphHTML = p.logo
-    ? `<img class="marker-logo" src="${p.logo}" alt="${p.name}" />`
-    : `<svg viewBox="0 0 24 24"><use href="${iconId}"></use></svg>`;
+  const glyphHTML = p.logoText
+    ? `<span class="marker-logo-text">${p.logoText}</span>`
+    : p.logo
+      ? `<img class="marker-logo" src="${p.logo}" alt="${p.name}" />`
+      : `<svg viewBox="0 0 24 24"><use href="${iconId}"></use></svg>`;
   return `
     <div class="pin">
       <svg class="marker-svg" width="36" height="44" viewBox="0 0 36 44" xmlns="http://www.w3.org/2000/svg">

@@ -21,7 +21,7 @@ const POIS = [
     addr: 'Vajnorská 32A, 831 03 Nové Mesto, Bratislava',
     lat: 48.16193, lng: 17.13238,
     carContera: '~12 min', carRacianska: '~5 min',
-    logo: 'assets/hotels/aurora.ico'
+    logoText: 'A'
   },
   {
     id: 'hotel-ambiente', cat: 'hotel', catLabel: 'Accommodation',

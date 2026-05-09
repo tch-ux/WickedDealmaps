@@ -189,6 +189,10 @@ main {
   object-fit: contain; padding: 4px;
 }
 .poi-card .pict img.poi-logo.logo-light { filter: brightness(0); }
+.poi-card .pict .logo-text {
+  font-size: 16px; font-weight: 800; line-height: 1;
+  color: var(--hotel);
+}
 
 .poi-card .num {
   margin-left: auto;
@@ -306,6 +310,10 @@ main {
   object-fit: contain;
   filter: brightness(0) invert(1);
   display: block;
+}
+.pin .glyph .marker-logo-text {
+  font-size: 13px; font-weight: 800; line-height: 1;
+  color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .pin .badge {
   position: absolute;
