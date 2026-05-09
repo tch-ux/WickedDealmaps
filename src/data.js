@@ -1,47 +1,47 @@
-const OFFICE_REF = { lat: 48.21748, lng: 17.17567 };
+const OFFICE_REF = { lat: 48.21218, lng: 17.17298 };
 
 const POIS = [
   {
     id: 'office-contera', cat: 'office', catLabel: 'Production Office',
     name: 'Contera Park Bratislava',
     addr: 'Na Pántoch 9777, 831 06 Bratislava-Rača',
-    lat: 48.2096, lng: 17.1724
+    lat: 48.21218, lng: 17.17298
   },
   {
     id: 'office-racianska', cat: 'office', catLabel: 'Production Office',
     name: 'Production Office Račianska',
     addr: 'Račianska 77A, Bratislava',
-    lat: 48.1792, lng: 17.1277
+    lat: 48.17186, lng: 17.12647
   },
   {
     id: 'hotel-aurora', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Aurora Apartments',
     addr: 'Vajnorská 32A, 831 03 Nové Mesto, Bratislava',
-    lat: 48.1633, lng: 17.1352, car: '~12 min', transit: '~25 min'
+    lat: 48.16193, lng: 17.13238, car: '~12 min', transit: '~25 min'
   },
   {
     id: 'hotel-ambiente', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Ambiente Apartments',
     addr: 'Ulica 29. augusta 36/C, 811 09 Staré Mesto, Bratislava',
-    lat: 48.1467, lng: 17.1220, car: '~18 min', transit: '~35 min'
+    lat: 48.14489, lng: 17.12247, car: '~18 min', transit: '~35 min'
   },
   {
     id: 'hotel-sheraton', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Sheraton Bratislava Hotel',
     addr: 'Pribinova 12, 811 09 Bratislava',
-    lat: 48.13942, lng: 17.12424, car: '~20 min', transit: '~40 min'
+    lat: 48.14040, lng: 17.12232, car: '~20 min', transit: '~40 min'
   },
   {
     id: 'hotel-roset', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Roset Hotel & Residence',
     addr: 'Štúrova 10/A, 811 02 Staré Mesto, Bratislava',
-    lat: 48.1428, lng: 17.1145, car: '~20 min', transit: '~40 min'
+    lat: 48.14311, lng: 17.11350, car: '~20 min', transit: '~40 min'
   },
   {
     id: 'hotel-riverpark', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Grand Hotel River Park, a Luxury Collection Hotel',
     addr: 'Dvořákovo nábrežie 6, 811 02 Staré Mesto, Bratislava',
-    lat: 48.1414, lng: 17.0912, car: '~22 min', transit: '~45 min'
+    lat: 48.14142, lng: 17.09031, car: '~22 min', transit: '~45 min'
   }
 ];
 
