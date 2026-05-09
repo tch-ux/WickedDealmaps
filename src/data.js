@@ -12,7 +12,7 @@ const POIS = [
   {
     id: 'office-racianska', cat: 'office', catLabel: 'Production Office',
     name: 'Production Office Račianska',
-    addr: 'Račianska 12481/77A, Bratislava',
+    addr: 'Račianska 12481/77A, 831 02 Bratislava',
     lat: 48.17186, lng: 17.12647,
     mapsQuery: 'Račianska 12481/77A, 831 02 Bratislava'
   },
