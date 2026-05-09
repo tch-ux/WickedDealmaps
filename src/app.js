@@ -143,12 +143,7 @@ function resetState() {
 
 const mapEl = document.getElementById('map');
 
-window.addEventListener('beforeprint', () => {
-  resetState();
-  mapEl.style.height = '240px';
-  map.invalidateSize({ animate: false });
-  map.fitBounds(overviewBounds, { padding: [40, 40], animate: false });
-});
+const PRINT_MAP_H = '360px';
 
 window.addEventListener('afterprint', () => {
   mapEl.style.height = '';
@@ -158,8 +153,11 @@ window.addEventListener('afterprint', () => {
 
 document.getElementById('printBtn').addEventListener('click', () => {
   resetState();
-  mapEl.style.height = '240px';
+  mapEl.style.height = PRINT_MAP_H;
   map.invalidateSize({ animate: false });
-  map.fitBounds(overviewBounds, { padding: [40, 40], animate: false });
-  setTimeout(() => window.print(), 300);
+  map.once('moveend', () => {
+    // wait for tiles to load after fitBounds
+    setTimeout(() => window.print(), 1200);
+  });
+  map.fitBounds(overviewBounds, { padding: [30, 30], animate: false });
 });
