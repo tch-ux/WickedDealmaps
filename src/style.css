@@ -299,7 +299,7 @@ main {
 /* Print-mode lock: fixed pixel size both on-screen (briefly) and in print
    so Leaflet's view/tiles are computed once and stay valid in print render. */
 .map-shell.printing { width: 680px !important; margin: 0 auto !important; }
-.map-shell.printing #map { height: 360px !important; }
+.map-shell.printing #map { height: 280px !important; }
 .map-shell.printing .map-toolbar { display: none; }
 
 /* ── Map markers ───────────────────────────────────────────── */
@@ -396,9 +396,13 @@ footer {
 
 /* ── Print / PDF ───────────────────────────────────────────── */
 @media print {
-  @page { size: A4 portrait; margin: 10mm; }
+  @page { size: A4 portrait; margin: 8mm; }
 
-  body { background: #fff; color: #000; font-size: 10px; }
+  /* Hard cap: ensure entire content fits on a single A4 page across browsers */
+  html, body { height: 281mm; max-height: 281mm; overflow: hidden; }
+  main { page-break-after: avoid; break-after: avoid; }
+
+  body { background: #fff; color: #000; font-size: 9px; }
   header.site { border-bottom: 1px solid #ddd; }
   .header-inner { padding: 6px 0; gap: 6px; }
   .logos img { max-height: 36px; }

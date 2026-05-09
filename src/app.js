@@ -151,7 +151,7 @@ function resetState() {
 
 const mapEl = document.getElementById('map');
 
-const PRINT_MAP_H = '360px';
+const PRINT_MAP_H = '280px';
 
 const mapShell = document.querySelector('.map-shell');
 
