@@ -14,12 +14,18 @@ POIS.forEach(p => {
 
   let metaHTML = '';
   if (p.cat === 'hotel') {
-    const km = kmTo(p, OFFICE_REF);
+    const kmC = kmTo(p, OFFICE_CONTERA);
+    const kmR = kmTo(p, OFFICE_RACIANSKA);
     metaHTML = `
       <div class="meta">
-        <span><svg><use href="#ic-route"></use></svg>${km} km to office</span>
-        <span><svg><use href="#ic-car"></use></svg>${p.car} by car</span>
-        <span><svg><use href="#ic-tram"></use></svg>${p.transit} MHD</span>
+        <span><svg><use href="#ic-route"></use></svg>${kmC} km</span>
+        <span><svg><use href="#ic-car"></use></svg>${p.carContera}</span>
+        <span class="meta-office">→ Contera</span>
+      </div>
+      <div class="meta">
+        <span><svg><use href="#ic-route"></use></svg>${kmR} km</span>
+        <span><svg><use href="#ic-car"></use></svg>${p.carRacianska}</span>
+        <span class="meta-office">→ Račianska</span>
       </div>`;
   }
 

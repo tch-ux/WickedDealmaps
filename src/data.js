@@ -1,4 +1,6 @@
-const OFFICE_REF = { lat: 48.21218, lng: 17.17298 };
+const OFFICE_CONTERA   = { lat: 48.21218, lng: 17.17298, short: 'Contera' };
+const OFFICE_RACIANSKA = { lat: 48.17186, lng: 17.12647, short: 'Račianska' };
+const OFFICE_REF = OFFICE_CONTERA;
 
 const POIS = [
   {
@@ -17,31 +19,36 @@ const POIS = [
     id: 'hotel-aurora', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Aurora Apartments',
     addr: 'Vajnorská 32A, 831 03 Nové Mesto, Bratislava',
-    lat: 48.16193, lng: 17.13238, car: '~12 min', transit: '~25 min'
+    lat: 48.16193, lng: 17.13238,
+    carContera: '~12 min', carRacianska: '~5 min'
   },
   {
     id: 'hotel-ambiente', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Ambiente Apartments',
     addr: 'Ulica 29. augusta 36/C, 811 09 Staré Mesto, Bratislava',
-    lat: 48.14489, lng: 17.12247, car: '~18 min', transit: '~35 min'
+    lat: 48.14489, lng: 17.12247,
+    carContera: '~18 min', carRacianska: '~10 min'
   },
   {
     id: 'hotel-sheraton', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Sheraton Bratislava Hotel',
     addr: 'Pribinova 12, 811 09 Bratislava',
-    lat: 48.14040, lng: 17.12232, car: '~20 min', transit: '~40 min'
+    lat: 48.14040, lng: 17.12232,
+    carContera: '~20 min', carRacianska: '~12 min'
   },
   {
     id: 'hotel-roset', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Roset Hotel & Residence',
     addr: 'Štúrova 10, 811 02 Staré Mesto, Bratislava',
-    lat: 48.14260, lng: 17.11404, car: '~20 min', transit: '~40 min'
+    lat: 48.14260, lng: 17.11404,
+    carContera: '~20 min', carRacianska: '~12 min'
   },
   {
     id: 'hotel-riverpark', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Grand Hotel River Park, a Luxury Collection Hotel',
     addr: 'Dvořákovo nábrežie 6, 811 02 Staré Mesto, Bratislava',
-    lat: 48.14142, lng: 17.09031, car: '~22 min', transit: '~45 min'
+    lat: 48.14142, lng: 17.09031,
+    carContera: '~22 min', carRacianska: '~18 min'
   }
 ];
 

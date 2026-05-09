@@ -25,12 +25,14 @@ function makeMarkerHTML(p) {
 function makePopupHTML(p) {
   let metaHTML = '';
   if (p.cat === 'hotel') {
-    const km = kmTo(p, OFFICE_REF);
+    const kmC = kmTo(p, OFFICE_CONTERA);
+    const kmR = kmTo(p, OFFICE_RACIANSKA);
     metaHTML = `
       <div class="pop-meta">
-        <span>${km} km</span>
-        <span>🚗 ${p.car}</span>
-        <span>🚊 ${p.transit}</span>
+        <span>${kmC} km · 🚗 ${p.carContera} → Contera</span>
+      </div>
+      <div class="pop-meta">
+        <span>${kmR} km · 🚗 ${p.carRacianska} → Račianska</span>
       </div>`;
   }
   return `
