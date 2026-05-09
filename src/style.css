@@ -286,6 +286,12 @@ main {
 }
 .reset-view:hover { color: var(--ink); }
 .top-btn svg { width: 12px; height: 12px; }
+.top-btn:focus, .top-btn:active, .top-btn:focus-visible {
+  background: var(--card);
+  color: var(--ink-soft);
+  border-color: var(--line);
+  outline: none;
+}
 
 #map { height: 620px; width: 100%; }
 

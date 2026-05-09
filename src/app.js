@@ -125,8 +125,9 @@ document.getElementById('resetView').addEventListener('click', () => {
 });
 
 // ── Top of Page ──────────────────────────────────────────────
-document.getElementById('topBtn').addEventListener('click', () => {
+document.getElementById('topBtn').addEventListener('click', e => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  e.currentTarget.blur();
 });
 
 // ── Print ────────────────────────────────────────────────────
