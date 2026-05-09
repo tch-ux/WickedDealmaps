@@ -381,7 +381,9 @@ footer {
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 720px) {
-  .title-row { flex-direction: column; align-items: flex-start; }
+  .title-row { flex-direction: column; align-items: stretch; }
+  .header-actions { width: 100%; justify-content: flex-start; }
+  .header-actions .icon-btn { flex: 0 0 auto; }
   #map { height: 480px; }
 }
 
