@@ -145,24 +145,26 @@ const mapEl = document.getElementById('map');
 
 const PRINT_MAP_H = '360px';
 
-window.addEventListener('beforeprint', () => {
-  mapEl.style.height = PRINT_MAP_H;
+const mapShell = document.querySelector('.map-shell');
+
+function enterPrintMode() {
+  mapShell.classList.add('printing');
   map.invalidateSize({ animate: false });
   map.setView([48.176, 17.132], 11, { animate: false });
-});
+}
 
-window.addEventListener('afterprint', () => {
-  mapEl.style.height = '';
+function exitPrintMode() {
+  mapShell.classList.remove('printing');
   map.invalidateSize({ animate: false });
   map.fitBounds(overviewBounds, { padding: [60, 60], animate: false });
-});
+}
+
+window.addEventListener('afterprint', exitPrintMode);
 
 document.getElementById('printBtn').addEventListener('click', () => {
   resetState();
-  // Pre-render at print size so tiles are already cached when beforeprint fires
-  mapEl.style.height = PRINT_MAP_H;
-  map.invalidateSize({ animate: false });
-  map.setView([48.176, 17.132], 11, { animate: false });
-  // Force-load tiles for the area, then trigger print (beforeprint will re-fit at real print width)
+  // Lock map to fixed pixel size (same on-screen and in print) so tile/view rendering matches
+  enterPrintMode();
+  // Wait for tiles to load at the new size before triggering print
   setTimeout(() => window.print(), 1500);
 });

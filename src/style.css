@@ -288,6 +288,12 @@ main {
 
 #map { height: 620px; width: 100%; }
 
+/* Print-mode lock: fixed pixel size both on-screen (briefly) and in print
+   so Leaflet's view/tiles are computed once and stay valid in print render. */
+.map-shell.printing { width: 680px !important; margin: 0 auto !important; }
+.map-shell.printing #map { height: 360px !important; }
+.map-shell.printing .map-toolbar { display: none; }
+
 /* ── Map markers ───────────────────────────────────────────── */
 .pin {
   width: 36px; height: 44px;
