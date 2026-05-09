@@ -30,7 +30,8 @@ POIS.forEach(p => {
   }
 
   const toOfficeLink = p.cat === 'hotel'
-    ? `<a href="${dirToOfficeHref(p)}" target="_blank" rel="noopener">→ Office</a>` : '';
+    ? `<a href="${dirToOfficeHref(p, OFFICE_CONTERA)}" target="_blank" rel="noopener">→ Office 1</a>
+       <a href="${dirToOfficeHref(p, OFFICE_RACIANSKA)}" target="_blank" rel="noopener">→ Office 2</a>` : '';
 
   card.innerHTML = `
     <div class="head-row">

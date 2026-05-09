@@ -79,6 +79,7 @@ function gmapsHref(p) {
 function dirHref(p) {
   return `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
 }
-function dirToOfficeHref(p) {
-  return `https://www.google.com/maps/dir/?api=1&origin=${p.lat},${p.lng}&destination=${OFFICE_REF.lat},${OFFICE_REF.lng}`;
+function dirToOfficeHref(p, office) {
+  const dest = office || OFFICE_REF;
+  return `https://www.google.com/maps/dir/?api=1&origin=${p.lat},${p.lng}&destination=${dest.lat},${dest.lng}`;
 }
