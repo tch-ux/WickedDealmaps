@@ -6,7 +6,7 @@ const POIS = [
   {
     id: 'office-contera', cat: 'office', catLabel: 'Production Office',
     name: 'Contera Park Bratislava',
-    addr: 'Na Pántoch 9777, 831 06 Bratislava-Rača',
+    addr: 'Na Pántoch 9777, 831 06 Bratislava',
     lat: 48.21218, lng: 17.17298
   },
   {
@@ -19,7 +19,7 @@ const POIS = [
   {
     id: 'hotel-aurora', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Aurora Apartments',
-    addr: 'Vajnorská 32A, 831 03 Nové Mesto, Bratislava',
+    addr: 'Vajnorská 32A, 831 03 Bratislava',
     lat: 48.16193, lng: 17.13238,
     carContera: '~12 min', carRacianska: '~5 min',
     logoText: 'A'
@@ -27,7 +27,7 @@ const POIS = [
   {
     id: 'hotel-ambiente', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Ambiente Apartments',
-    addr: 'Janáčkova 2171/1, 811 08 Staré Mesto, Bratislava',
+    addr: 'Janáčkova 2171/1, 811 08 Bratislava',
     lat: 48.14799, lng: 17.11940,
     carContera: '~18 min', carRacianska: '~10 min',
     logo: 'assets/hotels/ambiente.png',
@@ -44,7 +44,7 @@ const POIS = [
   {
     id: 'hotel-roset', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Roset Hotel & Residence',
-    addr: 'Štúrova 10, 811 02 Staré Mesto, Bratislava',
+    addr: 'Štúrova 10, 811 02 Bratislava',
     lat: 48.14260, lng: 17.11404,
     carContera: '~20 min', carRacianska: '~12 min',
     logo: 'assets/hotels/roset.svg'
@@ -52,7 +52,7 @@ const POIS = [
   {
     id: 'hotel-riverpark', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Grand Hotel River Park, a Luxury Collection Hotel',
-    addr: 'Dvořákovo nábrežie 6, 811 02 Staré Mesto, Bratislava',
+    addr: 'Dvořákovo nábrežie 6, 811 02 Bratislava',
     lat: 48.14142, lng: 17.09031,
     carContera: '~22 min', carRacianska: '~18 min',
     logo: 'assets/hotels/riverpark.svg', logoLight: true
