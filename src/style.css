@@ -381,16 +381,49 @@ footer {
 
 /* ── Print / PDF ───────────────────────────────────────────── */
 @media print {
-  @page { size: A4; margin: 14mm; }
-  body { background: #fff; color: #000; }
+  @page { size: A4 portrait; margin: 10mm; }
+
+  body { background: #fff; color: #000; font-size: 10px; }
   header.site { border-bottom: 1px solid #ddd; }
-  .header-inner { padding: 0 0 12px; }
+  .header-inner { padding: 6px 0; gap: 6px; }
+  .logos img { max-height: 36px; }
+  .title-row { padding-top: 6px; }
+  h1 { font-size: 18px; margin: 2px 0 0; }
+  .project-tag { font-size: 9px; }
   .header-actions, .map-toolbar, .reset-view { display: none !important; }
-  main { padding: 12px 0; gap: 16px; }
-  .poi-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
-  .poi-card { break-inside: avoid; box-shadow: none; cursor: default; }
-  .map-shell { break-inside: avoid; box-shadow: none; }
-  #map { height: 380px !important; }
+
+  main { padding: 8px 0; gap: 8px; }
+
+  .poi-section { gap: 6px; }
+  .poi-section-head h2 { font-size: 10px; }
+  .cat-icon { width: 20px; height: 20px; }
+  .cat-icon svg { width: 12px; height: 12px; }
+  .poi-count { font-size: 9px; padding: 1px 5px; }
+
+  .poi-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5px;
+  }
+  .poi-card {
+    break-inside: avoid;
+    box-shadow: none;
+    cursor: default;
+    padding: 7px 8px 6px;
+    gap: 3px;
+  }
+  .poi-card .pict { width: 22px; height: 22px; }
+  .poi-card .pict svg { width: 13px; height: 13px; }
+  .poi-card .name { font-size: 11px; }
+  .poi-card .addr { font-size: 9px; }
+  .poi-card .meta { font-size: 9px; gap: 6px; margin-top: 2px; }
+  .poi-card .meta svg { width: 9px; height: 9px; }
+  .poi-card .meta .meta-office { font-size: 9px; }
+  .poi-card .num { width: 17px; height: 17px; font-size: 9px; }
+  .poi-card .actions { display: none; }
+
+  .map-shell { break-inside: avoid; box-shadow: none; border-radius: 8px; }
+  #map { height: 240px !important; }
   .leaflet-control-container, .leaflet-control { display: none !important; }
-  footer { padding: 8px 0 0; }
+
+  footer { padding: 4px 0 0; font-size: 9px; }
 }

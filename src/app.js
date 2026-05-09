@@ -125,6 +125,27 @@ document.getElementById('resetView').addEventListener('click', () => {
 });
 
 // ── Print ────────────────────────────────────────────────────
+function resetForPrint() {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === 'all');
+  });
+  document.getElementById('section-office').style.display = '';
+  document.getElementById('section-hotel').style.display  = '';
+  POIS.forEach(p => markers[p.id].addTo(map));
+  document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('active'));
+  Object.values(markers).forEach(m => {
+    const el = m.getElement();
+    if (el) el.classList.remove('is-active');
+    m.closePopup();
+  });
+  activeId = null;
+  map.fitBounds(overviewBounds, { padding: [60, 60], animate: false });
+  map.invalidateSize();
+}
+
 document.getElementById('printBtn').addEventListener('click', () => {
-  setTimeout(() => window.print(), 100);
+  resetForPrint();
+  setTimeout(() => window.print(), 400);
 });
+
+window.addEventListener('beforeprint', resetForPrint);
