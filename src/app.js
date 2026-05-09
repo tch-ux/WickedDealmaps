@@ -84,10 +84,10 @@ function focusPOI(id, flyAndDelayPopup = true) {
 }
 
 // ── Filter ──────────────────────────────────────────────────
-document.querySelectorAll('.filter-btn').forEach(btn => {
+document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
   btn.addEventListener('click', () => {
     const f = btn.dataset.filter;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.toggle('active', b === btn));
 
     const visible = [];
     POIS.forEach(p => {
@@ -109,7 +109,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 
 // ── Reset ────────────────────────────────────────────────────
 document.getElementById('resetView').addEventListener('click', () => {
-  document.querySelectorAll('.filter-btn').forEach(b => {
+  document.querySelectorAll('.filter-btn[data-filter]').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === 'all');
   });
   document.getElementById('section-office').style.display = '';
@@ -133,7 +133,7 @@ document.getElementById('topBtn').addEventListener('click', e => {
 
 // ── Print ────────────────────────────────────────────────────
 function resetState() {
-  document.querySelectorAll('.filter-btn').forEach(b => {
+  document.querySelectorAll('.filter-btn[data-filter]').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === 'all');
   });
   document.getElementById('section-office').style.display = '';
