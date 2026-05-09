@@ -57,6 +57,12 @@ const POIS = [
   }
 ];
 
+// Pre-compute category indices so map.js and app.js both have _num
+(function () {
+  let oi = 0, hi = 0;
+  POIS.forEach(p => { p._num = p.cat === 'office' ? ++oi : ++hi; });
+})();
+
 function kmTo(a, b) {
   const R = 6371, r = d => d * Math.PI / 180;
   const dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng);

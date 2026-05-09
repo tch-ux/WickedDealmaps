@@ -1,10 +1,5 @@
 // ── Card rendering ──────────────────────────────────────────
-let officeIdx = 0, hotelIdx = 0;
-
 POIS.forEach(p => {
-  const idx = p.cat === 'office' ? ++officeIdx : ++hotelIdx;
-  p._num = idx;
-
   const card = document.createElement('div');
   card.className = 'poi-card';
   card.dataset.cat = p.cat;
@@ -39,7 +34,7 @@ POIS.forEach(p => {
     <div class="head-row">
       <span class="pict">${pictHTML}</span>
       <div class="name">${p.name}</div>
-      <span class="num">${idx}</span>
+      <span class="num">${p._num}</span>
     </div>
     <div class="addr">${p.addr}</div>
     ${metaHTML}
@@ -126,26 +121,6 @@ document.getElementById('resetView').addEventListener('click', () => {
   activeId = null;
   map.flyToBounds(overviewBounds, { padding: [60, 60], duration: 0.7 });
 });
-
-// ── Dark mode ────────────────────────────────────────────────
-const darkBtn   = document.getElementById('darkToggle');
-const darkLabel = document.getElementById('darkLabel');
-
-function applyDark(on) {
-  document.documentElement.classList.toggle('dark', on);
-  darkLabel.textContent = on ? 'Light mode' : 'Dark mode';
-  try { localStorage.setItem('wd_dark', on ? '1' : '0'); } catch (e) {}
-  setTimeout(() => map.invalidateSize(), 200);
-}
-
-let initDark = false;
-try { initDark = localStorage.getItem('wd_dark') === '1'; } catch (e) {}
-if (!initDark && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  initDark = true;
-}
-applyDark(initDark);
-
-darkBtn.addEventListener('click', () => applyDark(!document.documentElement.classList.contains('dark')));
 
 // ── Print ────────────────────────────────────────────────────
 document.getElementById('printBtn').addEventListener('click', () => {

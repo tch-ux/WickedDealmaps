@@ -10,23 +10,6 @@
   --office-soft: #fbe9e3;
   --hotel: #1f5fa8;
   --hotel-soft: #e3edf8;
-  --pop-bg: #ffffff;
-  --tile-filter: none;
-}
-
-html.dark {
-  --ink: #f3f4f6;
-  --ink-soft: #d1d5db;
-  --muted: #8b919b;
-  --line: #2a2f37;
-  --bg: #0f1216;
-  --card: #181c22;
-  --office: #ff6a45;
-  --office-soft: #3b1c12;
-  --hotel: #5b9eea;
-  --hotel-soft: #122334;
-  --pop-bg: #1c2027;
-  --tile-filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.95) saturate(0.7);
 }
 
 /* ── Reset ─────────────────────────────────────────────────── */
@@ -38,7 +21,6 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   line-height: 1.45;
-  transition: background .2s ease, color .2s ease;
 }
 
 /* ── Header ────────────────────────────────────────────────── */
@@ -64,9 +46,6 @@ header.site {
   height: auto;
   max-height: 64px;
   display: block;
-}
-html.dark .logos img {
-  filter: invert(0.92) hue-rotate(180deg);
 }
 .title-row {
   display: flex;
@@ -167,7 +146,7 @@ main {
   border-radius: 12px;
   padding: 14px 14px 12px;
   cursor: pointer;
-  transition: transform .15s ease, border-color .15s ease, box-shadow .2s ease, background .2s ease;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .2s ease;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -210,7 +189,6 @@ main {
   object-fit: contain; padding: 4px;
 }
 .poi-card .pict img.poi-logo.logo-light { filter: brightness(0); }
-html.dark .poi-card .pict img.poi-logo { filter: brightness(0) invert(0.85); }
 
 .poi-card .num {
   margin-left: auto;
@@ -304,7 +282,6 @@ html.dark .poi-card .pict img.poi-logo { filter: brightness(0) invert(0.85); }
 .reset-view:hover { color: var(--ink); }
 
 #map { height: 620px; width: 100%; }
-html.dark .leaflet-tile-pane { filter: var(--tile-filter); }
 
 /* ── Map markers ───────────────────────────────────────────── */
 .pin {
@@ -348,11 +325,11 @@ html.dark .leaflet-tile-pane { filter: var(--tile-filter); }
 /* ── Popups ────────────────────────────────────────────────── */
 .leaflet-popup-content-wrapper {
   border-radius: 12px;
-  background: var(--pop-bg);
+  background: #ffffff;
   color: var(--ink);
   box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 }
-.leaflet-popup-tip { background: var(--pop-bg); }
+.leaflet-popup-tip { background: #ffffff; }
 .leaflet-popup-content { margin: 12px 14px; font-family: inherit; }
 .pop-cat {
   font-size: 10px;
