@@ -26,8 +26,8 @@ const POIS = [
   {
     id: 'hotel-ambiente', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Ambiente Apartments',
-    addr: 'Ulica 29. augusta 36/C, 811 09 Staré Mesto, Bratislava',
-    lat: 48.14489, lng: 17.12247,
+    addr: 'Janáčkova 2171/1, 811 08 Staré Mesto, Bratislava',
+    lat: 48.14799, lng: 17.11940,
     carContera: '~18 min', carRacianska: '~10 min',
     logo: 'assets/hotels/ambiente.png'
   },
