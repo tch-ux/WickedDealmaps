@@ -125,7 +125,7 @@ document.getElementById('resetView').addEventListener('click', () => {
 });
 
 // ── Print ────────────────────────────────────────────────────
-function resetForPrint() {
+function resetState() {
   document.querySelectorAll('.filter-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === 'all');
   });
@@ -139,13 +139,27 @@ function resetForPrint() {
     m.closePopup();
   });
   activeId = null;
-  map.fitBounds(overviewBounds, { padding: [60, 60], animate: false });
-  map.invalidateSize();
 }
 
-document.getElementById('printBtn').addEventListener('click', () => {
-  resetForPrint();
-  setTimeout(() => window.print(), 400);
+const mapEl = document.getElementById('map');
+
+window.addEventListener('beforeprint', () => {
+  resetState();
+  mapEl.style.height = '240px';
+  map.invalidateSize({ animate: false });
+  map.fitBounds(overviewBounds, { padding: [40, 40], animate: false });
 });
 
-window.addEventListener('beforeprint', resetForPrint);
+window.addEventListener('afterprint', () => {
+  mapEl.style.height = '';
+  map.invalidateSize({ animate: false });
+  map.fitBounds(overviewBounds, { padding: [60, 60], animate: false });
+});
+
+document.getElementById('printBtn').addEventListener('click', () => {
+  resetState();
+  mapEl.style.height = '240px';
+  map.invalidateSize({ animate: false });
+  map.fitBounds(overviewBounds, { padding: [40, 40], animate: false });
+  setTimeout(() => window.print(), 300);
+});

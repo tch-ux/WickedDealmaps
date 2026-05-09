@@ -419,10 +419,10 @@ footer {
   .poi-card .meta svg { width: 9px; height: 9px; }
   .poi-card .meta .meta-office { font-size: 9px; }
   .poi-card .num { width: 17px; height: 17px; font-size: 9px; }
-  .poi-card .actions { display: none; }
+  .poi-card .actions { margin-top: 3px; gap: 5px; }
+  .poi-card .actions a { font-size: 9px; padding: 2px 6px; }
 
   .map-shell { break-inside: avoid; box-shadow: none; border-radius: 8px; }
-  #map { height: 240px !important; }
   .leaflet-control-container, .leaflet-control { display: none !important; }
 
   footer { padding: 4px 0 0; font-size: 9px; }
