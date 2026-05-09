@@ -34,8 +34,8 @@ const POIS = [
   {
     id: 'hotel-roset', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Roset Hotel & Residence',
-    addr: 'Štúrova 10/A, 811 02 Staré Mesto, Bratislava',
-    lat: 48.14311, lng: 17.11350, car: '~20 min', transit: '~40 min'
+    addr: 'Štúrova 10, 811 02 Staré Mesto, Bratislava',
+    lat: 48.14260, lng: 17.11404, car: '~20 min', transit: '~40 min'
   },
   {
     id: 'hotel-riverpark', cat: 'hotel', catLabel: 'Accommodation',
