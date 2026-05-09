@@ -155,9 +155,8 @@ document.getElementById('printBtn').addEventListener('click', () => {
   resetState();
   mapEl.style.height = PRINT_MAP_H;
   map.invalidateSize({ animate: false });
-  map.once('moveend', () => {
-    // wait for tiles to load after fitBounds
-    setTimeout(() => window.print(), 1200);
-  });
-  map.fitBounds(overviewBounds, { padding: [30, 30], animate: false });
+  // Use explicit center+zoom so all 7 POIs are visible regardless of container size
+  map.setView([48.176, 17.132], 11, { animate: false });
+  // Wait for tiles to render before opening print dialog
+  setTimeout(() => window.print(), 1500);
 });
