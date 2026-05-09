@@ -51,6 +51,7 @@ POIS.forEach(p => {
   card.addEventListener('click', e => {
     if (e.target.tagName === 'A') return;
     focusPOI(p.id);
+    document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
   const grid = document.getElementById(p.cat === 'office' ? 'grid-office' : 'grid-hotel');
