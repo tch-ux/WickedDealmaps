@@ -148,7 +148,7 @@ const PRINT_MAP_H = '360px';
 window.addEventListener('beforeprint', () => {
   mapEl.style.height = PRINT_MAP_H;
   map.invalidateSize({ animate: false });
-  map.fitBounds(overviewBounds, { padding: [20, 20], animate: false });
+  map.setView([48.176, 17.132], 11, { animate: false });
 });
 
 window.addEventListener('afterprint', () => {
@@ -162,7 +162,7 @@ document.getElementById('printBtn').addEventListener('click', () => {
   // Pre-render at print size so tiles are already cached when beforeprint fires
   mapEl.style.height = PRINT_MAP_H;
   map.invalidateSize({ animate: false });
-  map.fitBounds(overviewBounds, { padding: [20, 20], animate: false });
+  map.setView([48.176, 17.132], 11, { animate: false });
   // Force-load tiles for the area, then trigger print (beforeprint will re-fit at real print width)
   setTimeout(() => window.print(), 1500);
 });
