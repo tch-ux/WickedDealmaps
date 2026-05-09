@@ -11,13 +11,16 @@ map.fitBounds(overviewBounds, { padding: [60, 60] });
 function makeMarkerHTML(p) {
   const fill = p.cat === 'office' ? 'var(--office)' : 'var(--hotel)';
   const iconId = p.cat === 'office' ? '#ic-briefcase' : '#ic-bed';
+  const glyphHTML = p.logo
+    ? `<img class="marker-logo" src="${p.logo}" alt="${p.name}" />`
+    : `<svg viewBox="0 0 24 24"><use href="${iconId}"></use></svg>`;
   return `
     <div class="pin">
       <svg class="marker-svg" width="36" height="44" viewBox="0 0 36 44" xmlns="http://www.w3.org/2000/svg">
         <path d="M18 43.2 C18 43.2 4 27 4 17 A14 14 0 1 1 32 17 C32 27 18 43.2 18 43.2 Z"
               fill="${fill}" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
       </svg>
-      <div class="glyph"><svg viewBox="0 0 24 24"><use href="${iconId}"></use></svg></div>
+      <div class="glyph">${glyphHTML}</div>
       <div class="badge">${p._num}</div>
     </div>`;
 }

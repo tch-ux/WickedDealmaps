@@ -20,35 +20,40 @@ const POIS = [
     name: 'Aurora Apartments',
     addr: 'Vajnorská 32A, 831 03 Nové Mesto, Bratislava',
     lat: 48.16193, lng: 17.13238,
-    carContera: '~12 min', carRacianska: '~5 min'
+    carContera: '~12 min', carRacianska: '~5 min',
+    logo: 'assets/hotels/aurora.ico'
   },
   {
     id: 'hotel-ambiente', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Ambiente Apartments',
     addr: 'Ulica 29. augusta 36/C, 811 09 Staré Mesto, Bratislava',
     lat: 48.14489, lng: 17.12247,
-    carContera: '~18 min', carRacianska: '~10 min'
+    carContera: '~18 min', carRacianska: '~10 min',
+    logo: 'assets/hotels/ambiente.png'
   },
   {
     id: 'hotel-sheraton', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Sheraton Bratislava Hotel',
     addr: 'Pribinova 12, 811 09 Bratislava',
     lat: 48.14040, lng: 17.12232,
-    carContera: '~20 min', carRacianska: '~12 min'
+    carContera: '~20 min', carRacianska: '~12 min',
+    logo: 'assets/hotels/sheraton.svg'
   },
   {
     id: 'hotel-roset', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Roset Hotel & Residence',
     addr: 'Štúrova 10, 811 02 Staré Mesto, Bratislava',
     lat: 48.14260, lng: 17.11404,
-    carContera: '~20 min', carRacianska: '~12 min'
+    carContera: '~20 min', carRacianska: '~12 min',
+    logo: 'assets/hotels/roset.svg'
   },
   {
     id: 'hotel-riverpark', cat: 'hotel', catLabel: 'Accommodation',
     name: 'Grand Hotel River Park, a Luxury Collection Hotel',
     addr: 'Dvořákovo nábrežie 6, 811 02 Staré Mesto, Bratislava',
     lat: 48.14142, lng: 17.09031,
-    carContera: '~22 min', carRacianska: '~18 min'
+    carContera: '~22 min', carRacianska: '~18 min',
+    logo: 'assets/hotels/riverpark.svg', logoLight: true
   }
 ];
 

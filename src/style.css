@@ -205,6 +205,12 @@ main {
 .poi-card[data-cat="office"] .pict { background: var(--office-soft); color: var(--office); }
 .poi-card[data-cat="hotel"]  .pict { background: var(--hotel-soft);  color: var(--hotel); }
 .poi-card .pict svg { width: 18px; height: 18px; }
+.poi-card .pict img.poi-logo {
+  width: 100%; height: 100%;
+  object-fit: contain; padding: 4px;
+}
+.poi-card .pict img.poi-logo.logo-light { filter: brightness(0); }
+html.dark .poi-card .pict img.poi-logo { filter: brightness(0) invert(0.85); }
 
 .poi-card .num {
   margin-left: auto;
@@ -318,6 +324,12 @@ html.dark .leaflet-tile-pane { filter: var(--tile-filter); }
   pointer-events: none;
 }
 .pin .glyph svg { width: 18px; height: 18px; display: block; }
+.pin .glyph img.marker-logo {
+  width: 18px; height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  display: block;
+}
 .pin .badge {
   position: absolute;
   top: -3px; right: -3px;
