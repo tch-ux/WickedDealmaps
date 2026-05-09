@@ -145,6 +145,12 @@ const mapEl = document.getElementById('map');
 
 const PRINT_MAP_H = '360px';
 
+window.addEventListener('beforeprint', () => {
+  mapEl.style.height = PRINT_MAP_H;
+  map.invalidateSize({ animate: false });
+  map.fitBounds(overviewBounds, { padding: [20, 20], animate: false });
+});
+
 window.addEventListener('afterprint', () => {
   mapEl.style.height = '';
   map.invalidateSize({ animate: false });
@@ -153,10 +159,10 @@ window.addEventListener('afterprint', () => {
 
 document.getElementById('printBtn').addEventListener('click', () => {
   resetState();
+  // Pre-render at print size so tiles are already cached when beforeprint fires
   mapEl.style.height = PRINT_MAP_H;
   map.invalidateSize({ animate: false });
-  // fitBounds adapts to actual (print) container width — guarantees all POIs visible
-  map.fitBounds(overviewBounds, { padding: [30, 30], animate: false });
-  // Wait for tiles at the new zoom to render before opening print dialog
-  setTimeout(() => window.print(), 2500);
+  map.fitBounds(overviewBounds, { padding: [20, 20], animate: false });
+  // Force-load tiles for the area, then trigger print (beforeprint will re-fit at real print width)
+  setTimeout(() => window.print(), 1500);
 });
