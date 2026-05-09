@@ -285,6 +285,7 @@ main {
   font-family: inherit;
 }
 .reset-view:hover { color: var(--ink); }
+.top-btn svg { width: 12px; height: 12px; }
 
 #map { height: 620px; width: 100%; }
 

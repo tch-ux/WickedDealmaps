@@ -124,6 +124,11 @@ document.getElementById('resetView').addEventListener('click', () => {
   map.flyToBounds(overviewBounds, { padding: [60, 60], duration: 0.7 });
 });
 
+// ── Top of Page ──────────────────────────────────────────────
+document.getElementById('topBtn').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // ── Print ────────────────────────────────────────────────────
 function resetState() {
   document.querySelectorAll('.filter-btn').forEach(b => {
