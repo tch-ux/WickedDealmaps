@@ -13,7 +13,7 @@ POIS.forEach(p => {
       : `<svg><use href="${iconId}"></use></svg>`;
 
   let metaHTML = '';
-  if (p.cat === 'hotel') {
+  if (p.cat === 'hotel' || p.cat === 'location') {
     const kmC = kmTo(p, OFFICE_CONTERA);
     const kmR = kmTo(p, OFFICE_RACIANSKA);
     metaHTML = `

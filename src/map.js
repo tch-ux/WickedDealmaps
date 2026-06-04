@@ -29,7 +29,7 @@ function makeMarkerHTML(p) {
 
 function makePopupHTML(p) {
   let metaHTML = '';
-  if (p.cat === 'hotel') {
+  if (p.cat === 'hotel' || p.cat === 'location') {
     const kmC = kmTo(p, OFFICE_CONTERA);
     const kmR = kmTo(p, OFFICE_RACIANSKA);
     metaHTML = `
