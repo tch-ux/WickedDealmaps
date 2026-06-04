@@ -76,7 +76,7 @@ const POIS = [
     addr: 'Malinovského náměstí 1, 657 70 Brno, Czech Republic',
     lat: 49.19620, lng: 16.61347,
     carContera: '~1h 40 min', carRacianska: '~1h 31 min',
-    mapsLink: 'https://www.google.com/maps/place/Mahen+Theatre/@49.1961952,16.6134713,17z' },
+    mapsLink: 'https://maps.app.goo.gl/1JomXppX6xmv5uVM6' },
   { id: 'loc-lednice', cat: 'location', catLabel: 'Filming Location',
     name: 'Lednice ACADEMY',
     addr: 'Zámek 1, 691 44 Lednice na Moravě, Czech Republic',
