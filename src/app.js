@@ -163,7 +163,7 @@ const mapShell = document.querySelector('.map-shell');
 function enterPrintMode() {
   mapShell.classList.add('printing');
   map.invalidateSize({ animate: false });
-  map.setView([48.176, 17.132], 11, { animate: false });
+  map.fitBounds(overviewBounds, { padding: [20, 20], animate: false });
 }
 
 function exitPrintMode() {
@@ -179,5 +179,5 @@ document.getElementById('printBtn').addEventListener('click', () => {
   // Lock map to fixed pixel size (same on-screen and in print) so tile/view rendering matches
   enterPrintMode();
   // Wait for tiles to load at the new size before triggering print
-  setTimeout(() => window.print(), 1500);
+  setTimeout(() => window.print(), 2500);
 });

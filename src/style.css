@@ -302,10 +302,9 @@ main {
 
 #map { height: 620px; width: 100%; }
 
-/* Print-mode lock: fixed pixel size both on-screen (briefly) and in print
-   so Leaflet's view/tiles are computed once and stay valid in print render. */
-.map-shell.printing { width: 680px !important; margin: 0 auto !important; }
-.map-shell.printing #map { height: 280px !important; }
+/* Print-mode: pre-render map at full A4 page dimensions before window.print() */
+.map-shell.printing { width: 730px !important; margin: 0 auto !important; }
+.map-shell.printing #map { height: 980px !important; }
 .map-shell.printing .map-toolbar { display: none; }
 
 /* ── Map markers ───────────────────────────────────────────── */
@@ -405,10 +404,6 @@ footer {
 @media print {
   @page { size: A4 portrait; margin: 8mm; }
 
-  /* Hard cap: ensure entire content fits on a single A4 page across browsers */
-  html, body { height: 281mm; max-height: 281mm; overflow: hidden; }
-  main { page-break-after: avoid; break-after: avoid; }
-
   body { background: #fff; color: #000; font-size: 9px; }
   header.site { border-bottom: 1px solid #ddd; }
   .header-inner { padding: 6px 0; gap: 6px; }
@@ -427,7 +422,7 @@ footer {
   .poi-count { font-size: 9px; padding: 1px 5px; }
 
   .poi-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 5px;
   }
   .poi-card {
@@ -448,8 +443,17 @@ footer {
   .poi-card .actions { margin-top: 3px; gap: 5px; }
   .poi-card .actions a { font-size: 9px; padding: 2px 6px; }
 
-  .map-shell { break-inside: avoid; box-shadow: none; border-radius: 8px; }
+  /* Map fills entire page 2 */
+  .map-shell {
+    break-before: page;
+    break-inside: avoid;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    height: 277mm;
+  }
+  .map-shell #map { height: 277mm !important; }
   .leaflet-control-container, .leaflet-control { display: none !important; }
 
-  footer { padding: 4px 0 0; font-size: 9px; }
+  footer { display: none; }
 }
