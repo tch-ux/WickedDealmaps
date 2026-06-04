@@ -102,9 +102,9 @@ const POIS = [
   { id: 'loc-mlynica', cat: 'location', catLabel: 'Filming Location',
     name: 'Mlynica FACTORY BUILDING',
     addr: 'Turbínová 13, 831 04 Nové Mesto',
-    lat: 48.17054, lng: 17.15899,
+    lat: 48.17452, lng: 17.15456,
     carContera: '~18 min',
-    mapsLink: 'https://maps.app.goo.gl/F5s6Y2HCx32Q7xYR7' }
+    mapsLink: 'https://maps.app.goo.gl/4HcsnsYfRzTdM9CP7' }
 ];
 
 // Pre-compute category indices so map.js and app.js both have _num
