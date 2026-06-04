@@ -5,7 +5,7 @@ POIS.forEach(p => {
   card.dataset.cat = p.cat;
   card.dataset.id = p.id;
 
-  const iconId = p.cat === 'office' ? '#ic-briefcase' : '#ic-bed';
+  const iconId = p.cat === 'office' ? '#ic-briefcase' : p.cat === 'hotel' ? '#ic-bed' : '#ic-clapper';
   const pictHTML = p.logoText
     ? `<span class="logo-text">${p.logoText}</span>`
     : p.logo
@@ -31,7 +31,8 @@ POIS.forEach(p => {
 
   const toOfficeLink = p.cat === 'hotel'
     ? `<a href="${dirToOfficeHref(p, OFFICE_CONTERA)}" target="_blank" rel="noopener">→ Office 1</a>
-       <a href="${dirToOfficeHref(p, OFFICE_RACIANSKA)}" target="_blank" rel="noopener">→ Office 2</a>` : '';
+       <a href="${dirToOfficeHref(p, OFFICE_RACIANSKA)}" target="_blank" rel="noopener">→ Office 2</a>`
+    : '';
 
   card.innerHTML = `
     <div class="head-row">
@@ -54,7 +55,8 @@ POIS.forEach(p => {
     document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
-  const grid = document.getElementById(p.cat === 'office' ? 'grid-office' : 'grid-hotel');
+  const gridId = p.cat === 'office' ? 'grid-office' : p.cat === 'hotel' ? 'grid-hotel' : 'grid-location';
+  const grid = document.getElementById(gridId);
   grid.appendChild(card);
 });
 
@@ -97,8 +99,9 @@ document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
       else { map.removeLayer(markers[p.id]); }
     });
 
-    document.getElementById('section-office').style.display = f === 'hotel' ? 'none' : '';
-    document.getElementById('section-hotel').style.display  = f === 'office' ? 'none' : '';
+    document.getElementById('section-office').style.display   = (f === 'hotel' || f === 'location') ? 'none' : '';
+    document.getElementById('section-hotel').style.display    = (f === 'office' || f === 'location') ? 'none' : '';
+    document.getElementById('section-location').style.display = (f === 'office' || f === 'hotel') ? 'none' : '';
 
     if (visible.length > 1) {
       map.fitBounds(L.latLngBounds(visible), { padding: [60, 60] });
@@ -113,8 +116,9 @@ document.getElementById('resetView').addEventListener('click', () => {
   document.querySelectorAll('.filter-btn[data-filter]').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === 'all');
   });
-  document.getElementById('section-office').style.display = '';
-  document.getElementById('section-hotel').style.display  = '';
+  document.getElementById('section-office').style.display   = '';
+  document.getElementById('section-hotel').style.display    = '';
+  document.getElementById('section-location').style.display = '';
   POIS.forEach(p => markers[p.id].addTo(map));
   document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('active'));
   Object.values(markers).forEach(m => {
@@ -137,8 +141,9 @@ function resetState() {
   document.querySelectorAll('.filter-btn[data-filter]').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === 'all');
   });
-  document.getElementById('section-office').style.display = '';
-  document.getElementById('section-hotel').style.display  = '';
+  document.getElementById('section-office').style.display   = '';
+  document.getElementById('section-hotel').style.display    = '';
+  document.getElementById('section-location').style.display = '';
   POIS.forEach(p => markers[p.id].addTo(map));
   document.querySelectorAll('.poi-card').forEach(c => c.classList.remove('active'));
   Object.values(markers).forEach(m => {

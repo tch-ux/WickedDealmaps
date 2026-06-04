@@ -41,28 +41,49 @@ const POIS = [
     carContera: '~20 min', carRacianska: '~12 min',
     logo: 'assets/hotels/sheraton.svg'
   },
-  {
-    id: 'hotel-roset', cat: 'hotel', catLabel: 'Accommodation',
-    name: 'Roset Hotel & Residence',
-    addr: 'Štúrova 10, 811 02 Bratislava',
-    lat: 48.14260, lng: 17.11404,
-    carContera: '~20 min', carRacianska: '~12 min',
-    logo: 'assets/hotels/roset.svg'
-  },
-  {
-    id: 'hotel-riverpark', cat: 'hotel', catLabel: 'Accommodation',
-    name: 'Grand Hotel River Park, a Luxury Collection Hotel',
-    addr: 'Dvořákovo nábrežie 6, 811 02 Bratislava',
-    lat: 48.14142, lng: 17.09031,
-    carContera: '~22 min', carRacianska: '~18 min',
-    logo: 'assets/hotels/riverpark.svg', logoLight: true
-  }
+  { id: 'loc-sokolovna', cat: 'location', catLabel: 'Ballet Academy',
+    name: 'Sokolovna',
+    addr: 'Sokolská 1, 811 04 Bratislava',
+    lat: 48.15647, lng: 17.10319,
+    mapsLink: 'https://maps.app.goo.gl/MsCakAbhWZY6VMvn6' },
+  { id: 'loc-vsmu', cat: 'location', catLabel: 'Ballet Academy',
+    name: 'VSMU',
+    addr: 'Zochova 1, 811 03 Bratislava',
+    lat: 48.14546, lng: 17.10327,
+    mapsLink: 'https://maps.app.goo.gl/PVMVwVACcqpR6n6q6' },
+  { id: 'loc-mansion-ivanka', cat: 'location', catLabel: 'Training Room',
+    name: 'Mansion Ivanka',
+    addr: 'Námestie padlých hrdinov, 900 28 Ivanka pri Dunaji',
+    lat: 48.18964, lng: 17.25975,
+    mapsLink: 'https://maps.app.goo.gl/jJHvkUsdTeuDKQUu6' },
+  { id: 'loc-theatre-mostova', cat: 'location', catLabel: 'Ballet Academy',
+    name: 'Theatre Mostova',
+    addr: 'Mostová 8, 811 02 Bratislava',
+    lat: 48.14072, lng: 17.10939,
+    mapsLink: 'https://maps.app.goo.gl/HPaZDWqerKqk7acH9' },
+  { id: 'loc-ymca', cat: 'location', catLabel: 'Dance Club Ext',
+    name: 'YMCA',
+    addr: 'Karpatská 2, 811 05 Bratislava',
+    lat: 48.15683, lng: 17.11359,
+    mapsLink: 'https://maps.app.goo.gl/ZK8sbPMXKkTC5hvg6' },
+  { id: 'loc-theatre-brno', cat: 'location', catLabel: 'Opera',
+    name: 'Theatre Brno',
+    addr: 'Malinovského náměstí 1, 657 70 Brno, Czech Republic',
+    lat: 49.19620, lng: 16.61347,
+    mapsLink: 'https://www.google.com/maps/place/Mahen+Theatre/@49.1961952,16.6134713,17z' },
+  { id: 'loc-lednice', cat: 'location', catLabel: 'Academy',
+    name: 'Lednice',
+    addr: 'Zámek 1, 691 44 Lednice na Moravě, Czech Republic',
+    lat: 48.80160, lng: 16.80537,
+    mapsLink: 'https://maps.app.goo.gl/23STo2eUCABysa6h7' }
 ];
 
 // Pre-compute category indices so map.js and app.js both have _num
 (function () {
-  let oi = 0, hi = 0;
-  POIS.forEach(p => { p._num = p.cat === 'office' ? ++oi : ++hi; });
+  let oi = 0, hi = 0, li = 0;
+  POIS.forEach(p => {
+    p._num = p.cat === 'office' ? ++oi : p.cat === 'hotel' ? ++hi : ++li;
+  });
 })();
 
 function kmTo(a, b) {
@@ -73,6 +94,7 @@ function kmTo(a, b) {
 }
 
 function gmapsHref(p) {
+  if (p.mapsLink) return p.mapsLink;
   const q = p.mapsQuery || (p.name + ', ' + p.addr);
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 }

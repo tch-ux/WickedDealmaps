@@ -58,9 +58,24 @@
         </svg>
       </span>
       <h2>Accommodation</h2>
-      <span class="poi-count" id="count-hotel">5</span>
+      <span class="poi-count" id="count-hotel">3</span>
     </div>
     <div class="poi-grid" id="grid-hotel"></div>
+  </section>
+
+  <section class="poi-section" id="section-location">
+    <div class="poi-section-head">
+      <span class="cat-icon location" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1-.3 2.1.3 2.4 1.3z"/>
+          <path d="M6.2 5.7 5 11"/><path d="M10.7 4.4l1.2 5.3"/><path d="M15.2 3.1l1.2 5.3"/>
+          <path d="M2 11h20v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/>
+        </svg>
+      </span>
+      <h2>Filming Locations</h2>
+      <span class="poi-count" id="count-location">7</span>
+    </div>
+    <div class="poi-grid" id="grid-location"></div>
   </section>
 
   <section class="map-shell">
@@ -72,6 +87,9 @@
       </button>
       <button class="filter-btn" data-filter="hotel">
         <span class="swatch" style="background: var(--hotel);"></span>Accommodation
+      </button>
+      <button class="filter-btn" data-filter="location">
+        <span class="swatch" style="background: var(--location);"></span>Filming Locations
       </button>
       <button class="reset-view" id="resetView">Reset Map to overview</button>
       <button class="filter-btn top-btn" id="topBtn" title="Scroll to top">
@@ -123,6 +141,13 @@
         <path d="M17 21l-2-3"></path>
         <circle cx="9" cy="15" r="0.6"></circle>
         <circle cx="15" cy="15" r="0.6"></circle>
+      </g>
+    </symbol>
+    <symbol id="ic-clapper" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1-.3 2.1.3 2.4 1.3z"/>
+        <path d="M6.2 5.7 5 11"/><path d="M10.7 4.4l1.2 5.3"/><path d="M15.2 3.1l1.2 5.3"/>
+        <path d="M2 11h20v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/>
       </g>
     </symbol>
     <symbol id="ic-route" viewBox="0 0 24 24">

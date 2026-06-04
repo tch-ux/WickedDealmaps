@@ -9,8 +9,8 @@ const overviewBounds = L.latLngBounds(POIS.map(p => [p.lat, p.lng]));
 map.fitBounds(overviewBounds, { padding: [60, 60] });
 
 function makeMarkerHTML(p) {
-  const fill = p.cat === 'office' ? 'var(--office)' : 'var(--hotel)';
-  const iconId = p.cat === 'office' ? '#ic-briefcase' : '#ic-bed';
+  const fill = p.cat === 'office' ? 'var(--office)' : p.cat === 'hotel' ? 'var(--hotel)' : 'var(--location)';
+  const iconId = p.cat === 'office' ? '#ic-briefcase' : p.cat === 'hotel' ? '#ic-bed' : '#ic-clapper';
   const glyphHTML = p.logoText
     ? `<span class="marker-logo-text">${p.logoText}</span>`
     : p.logo
