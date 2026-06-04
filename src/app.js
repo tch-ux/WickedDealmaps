@@ -15,23 +15,16 @@ POIS.forEach(p => {
   let metaHTML = '';
   if (p.cat === 'hotel' || p.cat === 'location') {
     const kmC = kmTo(p, OFFICE_CONTERA);
-    const kmR = kmTo(p, OFFICE_RACIANSKA);
     metaHTML = `
       <div class="meta">
         <span><svg><use href="#ic-route"></use></svg>${kmC} km</span>
         <span><svg><use href="#ic-car"></use></svg>${p.carContera}</span>
         <span class="meta-office">→ Contera</span>
-      </div>
-      <div class="meta">
-        <span><svg><use href="#ic-route"></use></svg>${kmR} km</span>
-        <span><svg><use href="#ic-car"></use></svg>${p.carRacianska}</span>
-        <span class="meta-office">→ Račianska</span>
       </div>`;
   }
 
   const toOfficeLink = p.cat === 'hotel'
-    ? `<a href="${dirToOfficeHref(p, OFFICE_CONTERA)}" target="_blank" rel="noopener">→ Office 1</a>
-       <a href="${dirToOfficeHref(p, OFFICE_RACIANSKA)}" target="_blank" rel="noopener">→ Office 2</a>`
+    ? `<a href="${dirToOfficeHref(p, OFFICE_CONTERA)}" target="_blank" rel="noopener">→ Office</a>`
     : '';
 
   card.innerHTML = `

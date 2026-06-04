@@ -31,13 +31,9 @@ function makePopupHTML(p) {
   let metaHTML = '';
   if (p.cat === 'hotel' || p.cat === 'location') {
     const kmC = kmTo(p, OFFICE_CONTERA);
-    const kmR = kmTo(p, OFFICE_RACIANSKA);
     metaHTML = `
       <div class="pop-meta">
         <span>${kmC} km · 🚗 ${p.carContera} → Contera</span>
-      </div>
-      <div class="pop-meta">
-        <span>${kmR} km · 🚗 ${p.carRacianska} → Račianska</span>
       </div>`;
   }
   return `
